@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.calculator {
+    background-color: #ff9900; /* Yellow background */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.title {
+    color: #666; /* Gray color */
+    font-size: 1em; /* Smaller font size */
+    margin-top: 0px; /* Reduced margin */
+	margin-bottom: 20px; /* Reduced margin */
+    text-align: center; /* Center the text */
+}
+
+.display {
+    background-color: #cccccc; /* Gray display */
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 2em;
+    text-align: right;
+    margin-bottom: 20px;
+    color: #333;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.btn {
+    background-color: #054d14;
+    /*Bluebuttons*/color: white;
+    border: none;
+    border-radius: 10px;
+    /*Slightlyroundedcorners*/padding: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0px 4px 0px #3e964b;
+     /* 3D effect */:;
+    -webkit-transition: transform 0.1s ease, box-shadow 0.1s ease;
+    -moz-transition: transform 0.1s ease, box-shadow 0.1s ease;
+    -ms-transition: transform 0.1s ease, box-shadow 0.1s ease;
+    -o-transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn:active {
+    transform: translateY(2px); /* Click effect */
+    box-shadow: 0px 2px 0px #a1a39f; /* Adjust shadow on click */
+}
+
+.btn:hover {
+    background-color: #317522; /* Darker blue on hover */
+}
+
+.btn.operator {
+    background-color: #575653; /* Orange for operators */
+    box-shadow: 0px 4px 0px #6f6f6e; /* 3D effect */
+}
+
+.btn.operator:active {
+    box-shadow: 0px 2px 0px #cc7a00; /* Adjust shadow on click */
+}
+
+.btn.operator:hover {
+    background-color: #77736f; /* Darker orange on hover */
+}
+
+#igual {
+    /* grid-column: span 2; Equal button spans 2 columns */
+}
+
+#sumar {
+  grid-row: span 2;   /*  Plus button spans 2 rows */
+}
