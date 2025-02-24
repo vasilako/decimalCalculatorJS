@@ -20,44 +20,45 @@
             <h1 class="title">Powered by Vasil Hristov Gugov</h1>
             <div class="display" id="display">0</div>
             <div class="buttons">
-                <button class="btn" onclick="CleanDisplay()">C</button>
-                <button class="btn" onclick="calculatePercentage()">%</button>
-                <button class="btn" id="soundIcon" onclick="SoundOnOff()">
+                <button class="btn" onclick="calculator.CleanDisplay()">C</button>
+                <button class="btn" onclick="calculator.calculatePercentage()">%</button>
+                <button class="btn" id="soundIcon" onclick="calculator.SoundOnOff()">
                     <i class="fa-solid fa-volume-high fa-xs" style="color: #ffffff;"></i>
                 </button>
-                <button class="btn operator" onclick="addOperator('/')">/</button>
+                <button class="btn operator" onclick="calculator.addOperator('/')">/</button>
 
-                <button class="btn" onclick="addNumber('7')">7</button>
-                <button class="btn" onclick="addNumber('8')">8</button>
-                <button class="btn" onclick="addNumber('9')">9</button>
-                <button class="btn operator" onclick="addOperator('*')">*</button>
+                <button class="btn" onclick="calculator.addNumber('7')">7</button>
+                <button class="btn" onclick="calculator.addNumber('8')">8</button>
+                <button class="btn" onclick="calculator.addNumber('9')">9</button>
+                <button class="btn operator" onclick="calculator.addOperator('*')">*</button>
                 
-                <button class="btn" onclick="addNumber('4')">4</button>
-                <button class="btn" onclick="addNumber('5')">5</button>
-                <button class="btn" onclick="addNumber('6')">6</button>
-                <button class="btn operator" onclick="addOperator('-')">-</button>
+                <button class="btn" onclick="calculator.addNumber('4')">4</button>
+                <button class="btn" onclick="calculator.addNumber('5')">5</button>
+                <button class="btn" onclick="calculator.addNumber('6')">6</button>
+                <button class="btn operator" onclick="calculator.addOperator('-')">-</button>
                
 
-                <button class="btn" onclick="addNumber('1')">1</button>
-                <button class="btn" onclick="addNumber('2')">2</button>
-                <button class="btn" onclick="addNumber('3')">3</button>
-                <button class="btn operator" id="sumar" onclick="addOperator('+')">+</button>
+                <button class="btn" onclick="calculator.addNumber('1')">1</button>
+                <button class="btn" onclick="calculator.addNumber('2')">2</button>
+                <button class="btn" onclick="calculator.addNumber('3')">3</button>
+                <button class="btn operator" id="sumar" onclick="calculator.addOperator('+')">+</button>
                
 
-                <button class="btn" onclick="addNumber('0')">0</button>
-                <button class="btn" onclick="addNumber('.')">.</button>
+                <button class="btn" onclick="calculator.addNumber('0')">0</button>
+                <button class="btn" onclick="calculator.addNumber('.')">.</button>
                 
-                <button class="btn" id="igual" onclick="calculateResult()">=</button>
-                
-                
+                <button class="btn" id="igual" onclick="calculator.calculateResult()">=</button>
+
             </div>
         </div>
     </div>
 
     <!-- Button click sound -->
     <audio id="clickSound" src="./click-234708.mp3"></audio>
-
-    <script src="index.js"></script>
-
+    
+ 
+   
+    <script type="module" src="index.js"></script>
+    
 </body>
 </html>

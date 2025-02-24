@@ -1,3 +1,5 @@
+import { handleKeyPress } from "./keyPress.js";
+
 let display = document.getElementById("display");
 const audio = document.getElementById("clickSound");
 
@@ -101,3 +103,21 @@ function SoundOnOff() {
     iconElement.className = "fa-solid fa-volume-off fa-ms";
   }
 }
+
+export {
+  addNumber,
+  addOperator,
+  calculateResult,
+  calculatePercentage,
+  CleanDisplay,
+};
+
+// Functions are exposed to `window` to make them global
+window.calculator = {
+  addNumber: addNumber,
+  addOperator: addOperator,
+  calculateResult: calculateResult,
+  calculatePercentage: calculatePercentage,
+  CleanDisplay: CleanDisplay,
+  SoundOnOff: SoundOnOff,
+};
