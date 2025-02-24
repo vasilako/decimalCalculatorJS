@@ -1,87 +1,95 @@
 let display = document.getElementById("display");
 const audio = document.getElementById("clickSound");
-let operadorActual = "";
-let valorAnterior = "";
-let valorActual = 0;
-let resultado = 0;
 
 function addNumber(numero) {
-  if (valorAnterior == "" && operadorActual == "") {
-    valorAnterior = parseFloat(numero);
-    display.textContent = numero;
-  } else {
-    valorActual = parseFloat(numero);
-    display.textContent += numero; // Actualiza el display
-    caclularValorActual();
+  if (display.textContent === "0") {
+    display.textContent = "";
   }
+  display.textContent += numero;
   audio.play();
-  console.log("Valor actual: " + valorActual);
+  console.log(display.textContent);
 }
 
-function addOperator(operador) {
-  if (valorAnterior === "") {
-    valorAnterior = parseFloat(display.textContent);
+function addOperator(operator) {
+  if (display.textContent === "0") {
+    alert("Please enter a number first.");
+    return;
   }
-  operadorActual = operador;
-  display.textContent += operador;
-  valorActual = ""; // Limpia valorActual para el siguiente número
+  display.textContent += operator;
   audio.play();
 }
 
 function calculateResult() {
-  valorActual = parseFloat(display.textContent.split(operadorActual).pop()); // Obtiene el último número
-  caclularValorActual();
+  let displayText = display.textContent;
+  if (displayText === "0") {
+    alert("Please enter a number first.");
+    return;
+  }
 
-  display.textContent = resultado;
-  operadorActual = ""; // Restablece el operador
-  valorAnterior = resultado;
-  valorActual = 0;
+  try {
+    display.textContent = eval(displayText);
+    audio.play();
+  } catch (error) {
+    alert("Error! Clean Display and try again.");
+  }
+}
+function calculatePercentage() {
+  let displayText = display.textContent;
+
+  if (!displayText.match(/[\d.]+[\+\-\*\/][\d.]+$/)) {
+    alert(
+      "Please enter a valid transaction before calculating the percentage."
+    );
+    return;
+  }
+
+  // Extract the last two numbers and the operator
+  const match = displayText.match(/([\d.]+)([\+\-\*\/])([\d.]+)$/);
+
+  if (!match) return;
+
+  const firstNum = parseFloat(match[1]); // First number
+  const operator = match[2]; // Operator (+, -, *, /)
+  const secondNum = parseFloat(match[3]); // Second number
+
+  // Declare variable to save the result
+  let percentageValue;
+
+  // Apply the calculation according to the operator
+  switch (operator) {
+    case "+":
+      percentageValue = firstNum + firstNum * (secondNum / 100); // Sum %
+      break;
+    case "-":
+      percentageValue = firstNum - firstNum * (secondNum / 100); // Substract %
+      break;
+    case "*":
+      percentageValue = firstNum * (secondNum / 100); // Multiply %
+      break;
+    case "/":
+      percentageValue = firstNum / (secondNum / 100); // Divide %
+      break;
+    default:
+      alert("Invalid operation");
+      return;
+  }
+
+  // Replace the calculation on the screen with the obtained value
+  display.textContent = displayText.replace(
+    /([\d.]+)([\+\-\*\/])([\d.]+)$/,
+    percentageValue
+  );
   audio.play();
 }
 
 function CleanDisplay() {
   display.textContent = "0";
-  operadorActual = "";
-  valorAnterior = "";
-  valorActual = 0;
-  resultado = 0;
   audio.play();
-}
-
-function caclularValorActual() {
-  if (operadorActual === "") {
-    resultado = parseFloat(valorAnterior);
-    return;
-  }
-
-  switch (operadorActual) {
-    case "+":
-      resultado = parseFloat(valorAnterior) + parseFloat(valorActual);
-      break;
-    case "-":
-      resultado = parseFloat(valorAnterior) - parseFloat(valorActual);
-      break;
-    case "*":
-      resultado = parseFloat(valorAnterior) * parseFloat(valorActual);
-      break;
-    case "/":
-      resultado = parseFloat(valorAnterior) / parseFloat(valorActual);
-      break;
-    default:
-      resultado = valorActual;
-  }
-
-  display.textContent = resultado; // Actualiza el display con el resultado
 }
 
 function SoundOnOff() {
   const audio = document.getElementById("clickSound");
   const soundIcon = document.getElementById("soundIcon");
-
-  if (!soundIcon || !audio) {
-    console.error("Elemento de audio o ícono no encontrado.");
-    return;
-  }
 
   const iconElement = soundIcon.querySelector("i");
 
