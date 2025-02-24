@@ -1,4 +1,4 @@
-# Decimal Calculator
+# Decimal CalculatorJS v.1.0.1
 
 A simple web-based decimal calculator built using HTML, CSS, and JavaScript.
 
@@ -7,6 +7,7 @@ A simple web-based decimal calculator built using HTML, CSS, and JavaScript.
 - Basic arithmetic operations: addition, subtraction, multiplication, and division.
 - Clear and reset functionality.
 - Responsive design for mobile and desktop.
+- This version works only with the mouse.
 
 ## Installation
 
