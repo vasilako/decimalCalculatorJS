@@ -43,24 +43,31 @@ body {
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    gap: 10px;
 }
 
 .btn {
     background-color: #054d14;
-    /*Bluebuttons*/color: white;
+    color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 4030px;
     /*Slightlyroundedcorners*/padding: 20px;
-    font-size: 1.5em;
+    font-size: 150%;
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
-    box-shadow: 0px 4px 0px #3e964b;
-     /* 3D effect */:;
-    -webkit-transition: transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0px 6px 0px #512018;
+    /*3Deffect*/-webkit-transition: transform 0.1s ease, box-shadow 0.1s ease;
     -moz-transition: transform 0.1s ease, box-shadow 0.1s ease;
     -ms-transition: transform 0.1s ease, box-shadow 0.1s ease;
     -o-transition: transform 0.1s ease, box-shadow 0.1s ease;
+    -webkit-border-radius: 4030px;
+    -moz-border-radius: 4030px;
+    -ms-border-radius: 4030px;
+    -o-border-radius: 4030px;
+    /*Googlefonts*/font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
 }
 
 .btn:active {
@@ -74,7 +81,7 @@ body {
 
 .btn.operator {
     background-color: #575653; /* Orange for operators */
-    box-shadow: 0px 4px 0px #6f6f6e; /* 3D effect */
+    box-shadow: 0px 4px 0px #512018; /* 3D effect */
 }
 
 .btn.operator:active {
@@ -85,9 +92,9 @@ body {
     background-color: #77736f; /* Darker orange on hover */
 }
 
-#igual {
-    /* grid-column: span 2; Equal button spans 2 columns */
-}
+/* #igual {
+    /* grid-column: span 2; Equal button spans 2 columns 
+} */
 
 #sumar {
   grid-row: span 2;   /*  Plus button spans 2 rows */

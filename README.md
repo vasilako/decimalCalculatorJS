@@ -1,4 +1,4 @@
-# Decimal CalculatorJS v.1.0.1
+# Decimal CalculatorJS v.1.0.2
 
 A simple web-based decimal calculator built using HTML, CSS, and JavaScript.
 
